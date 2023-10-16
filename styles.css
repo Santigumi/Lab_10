@@ -51,12 +51,26 @@ header a :hover {
 /* Banner */
 
 .pelicula-principal {
-    min-height: 45rem;
+    height: 35rem;
     color: white;
     display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+#nuevaPelicula {
+    width: 40rem;
+    height: 35rem;
+}
+
+#información {
+    display: flex;
     flex-direction: column;
-    justify-content: end;
-    background-size: 100% 100%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-right: 10rem;
+    width: 30rem;
 }
 
 .titule {
@@ -174,7 +188,7 @@ header a :hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 17rem;
+    /* margin-bottom: 17rem; */
     margin-left: 9rem;
     width: 2rem;
     height: 2rem;
@@ -225,6 +239,7 @@ header a :hover {
 #nuevoDiv img {
     width: 9rem;
     height: 13rem;
+    cursor: pointer;
 }
 
 #baseLine {
@@ -264,6 +279,7 @@ header a :hover {
     flex-direction: row;
     width: 9rem;
     height: 13rem;
+    cursor: pointer;
 }
 
 #mask img {
