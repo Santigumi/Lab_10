@@ -2,6 +2,10 @@ const banner = document.querySelector(".pelicula-principal");
 banner.style.background = "linear-gradient(to right, rgba(0, 0, 0, 3), rgba(0, 0, 0, 0)), url('https://images4.alphacoders.com/115/1156779.jpg')";
 banner.style.backgroundSize = "cover"; 
 
+const nuevaPelicula = document.querySelector("#nuevaPelicula");
+const peliculaNombre = document.querySelector("#nombrePelicula");
+peliculaNombre.innerHTML = "Deadpool 2"
+
 const descripción = document.querySelector("#description");
 descripción.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
@@ -62,8 +66,17 @@ function crearPeliculas () {
 
     const imagenPelicula = document.createElement("img");
     imagenPelicula.id = "imagenPelicula";
-
     imagenPelicula.src = recomendado.link;
+
+    mask.addEventListener("click", () => {
+      banner.style.background = 'rgb(0, 0, 0)';
+      nuevaPelicula.style.background = `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('${recomendado.link}')`;
+      nuevaPelicula.style.backgroundSize = "100% 100%";
+      nuevaPelicula.style.backgroundRepeat = "no-repeat";
+      peliculaNombre.innerHTML = recomendado.nombre;
+    });
+    
+    console.log(banner.style.background);
 
     edad.appendChild(age);
     mask.appendChild(edad);
@@ -112,6 +125,14 @@ trending.forEach((trending) => {
   const imagenPelicula = document.createElement("img");
 
   imagenPelicula.src = trending.link;
+
+  nuevoDiv.addEventListener("click", () => {
+    banner.style.background = 'rgb(0, 0, 0)';
+    nuevaPelicula.style.background = `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('${trending.link}')`;
+    nuevaPelicula.style.backgroundSize = "100% 100%";
+    nuevaPelicula.style.backgroundRepeat = "no-repeat";
+    peliculaNombre.innerHTML = trending.nombre;
+  });
 
   nuevoDiv.appendChild(imagenPelicula);
   Trending.appendChild(nuevoDiv);
